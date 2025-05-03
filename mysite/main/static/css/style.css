@@ -1,0 +1,527 @@
+    :root {
+        --primary-color: #6c63ff;
+        --secondary-color: #4d44db;
+        --bg-light: #f8f9fa;
+        --bg-dark: #121212;
+        --text-light: #212529;
+        --text-dark: #e0e0e0;
+        --card-light: #ffffff;
+        --card-dark: #1e1e1e;
+        --border-dark: #333;
+        --binary-light: rgba(0, 0, 0, 0.1);
+         --binary-dark: rgba(0, 200, 255, 0.7);
+        --neon-primary: #08f;
+        --neon-secondary: #0f8;
+        --neon-glow: 0 0 10px rgba(0, 255, 255, 0.8),
+                      0 0 20px rgba(0, 255, 255, 0.6),
+                      0 0 30px rgba(0, 255, 255, 0.4);
+    }
+
+    body {
+        background-color: var(--bg-light);
+        color: var(--text-light);
+        overflow-x: hidden;
+        position: relative;
+        transition: background 0.5s, color 0.5s;
+    }
+
+    .dark-mode {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+    }
+
+        /* Главный фон - самый темный */
+    .dark-mode #binaryBackground {
+        background: linear-gradient(135deg, rgba(10, 10, 20, 0.95) 0%, rgba(5, 5, 15, 0.98) 100%);
+    }
+
+        /* Герой-секция (первый слайд) - темный */
+    .dark-mode header.section {
+        background: rgba(15, 15, 25, 0.92);
+    }
+
+        /* Секция "Обо мне" - светлее */
+    .dark-mode #about {
+        background: rgba(25, 25, 40, 0.88);
+    }
+
+    /* Секции "Навыки" и "Проекты" - темнее */
+    .dark-mode #skills,
+    .dark-mode #projects {
+        background: rgba(18, 18, 30, 0.93);
+    }
+
+    /* Секция "Контакты" - светлее */
+    .dark-mode #contact {
+        background: rgba(30, 30, 45, 0.87);
+    }
+
+    /* Футер - полностью непрозрачный */
+    .dark-mode footer {
+        background: #0a0a14 !important;
+        opacity: 1 !important;
+    }
+
+    /* Неоновые эффекты для темного режима */
+    .dark-mode .text-primary {
+        color: var(--neon-primary) !important;
+        text-shadow: var(--neon-glow);
+    }
+
+    .dark-mode .btn-primary {
+        background-color: var(--neon-primary);
+        border-color: var(--neon-primary);
+        box-shadow: var(--neon-glow);
+        color: #fff;
+    }
+
+    .dark-mode .btn-outline-primary {
+        color: var(--neon-primary);
+        border-color: var(--neon-primary);
+        text-shadow: var(--neon-glow);
+    }
+
+    .dark-mode .btn-outline-primary:hover {
+        background-color: var(--neon-primary);
+        color: #fff;
+    }
+
+    .dark-mode .navbar {
+        box-shadow: 0 2px 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .dark-mode .card {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+
+    .section:not(:first-child) {
+        border-top: 1px solid var(--border-light);
+    }
+
+    .dark-mode .section:not(:first-child) {
+        border-top: 1px solid var(--border-dark);
+    }
+
+    .dark-mode .card {
+        background-color: var(--card-dark);
+        border-color: var(--border-dark);
+        color: var(--text-dark);
+    }
+
+    .dark-mode .bg-white {
+        background-color: var(--bg-dark) !important;
+    }
+
+    .dark-mode .text-muted {
+        color: #aaa !important;
+    }
+
+    .dark-mode .form-control {
+        background-color: #2d2d2d;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+
+    .dark-mode .form-control:focus {
+        background-color: #333;
+        color: #fff;
+        border-color: var(--primary-color);
+    }
+
+    .dark-mode .project-card {
+        background-color: var(--card-dark);
+        border-color: var(--border-dark);
+    }
+
+    .dark-mode .project-card .card-body {
+        color: var(--text-dark);
+    }
+
+    .navbar {
+        z-index: 10;
+    }
+
+    .dark-mode .navbar-light.bg-light {
+        background-color: #1a1a1a !important;
+        color: var(--text-dark);
+    }
+
+    .dark-mode .navbar-brand {
+        color: var(--text-dark) !important;
+    }
+
+    .theme-toggle {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #ffc107;
+        background: none;
+        border: none;
+    }
+
+        /* Обновленные стили для фотографии профиля */
+        /* Стили для изображения профиля */
+    /* Круглая рамка для фото */
+    .profile-img {
+        width: 450px; /* Увеличили размер */
+        height: 450px; /* Сохраняем соотношение 1:1 */
+        object-fit: cover;
+        border: 10px solid white; /* Увеличили рамку */
+        border-radius: 50%;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Усилили тень */
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+    }
+
+    /* Адаптивность для мобильных */
+    @media (max-width: 768px) {
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border: 6px solid white;
+        }
+    }
+
+    .dark-mode .profile-img {
+        border-color: var(--neon-primary); /* Неоновая рамка в темном режиме */
+        box-shadow: 0 15px 40px rgba(0, 200, 255, 0.3);
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05) rotate(5deg) translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        /* border-radius остается 50% при наведении */
+    }
+
+    /* Для адаптивности на мобильных */
+    @media (max-width: 768px) {
+        .profile-img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    .floating {
+        animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+        40% {transform: translateY(-30px);}
+        60% {transform: translateY(-15px);}
+    }
+
+    /* Стили для секции проектов */
+    .project-card {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(108, 99, 255, 0.2) !important;
+    }
+
+    .project-img-container {
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .project-img-container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img-container img {
+        transform: scale(1.1);
+    }
+
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(108, 99, 255, 0.9);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+
+    .project-description {
+        text-align: center;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-description {
+        transform: translateY(0);
+    }
+
+    /* Стили для консоли */
+    .fixed-console {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 60px;
+        background: #1a1a2e; /* Темный фон для консоли */
+        color: #00bfff; /* Яркий синий цвет текста */
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+        border-top: 2px solid var(--neon-primary);
+        z-index: 1000;
+        box-shadow: 0 -2px 15px rgba(0, 191, 255, 0.3);
+    }
+
+    .console-content {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .console-cursor {
+        display: inline-block;
+        width: 8px;
+        height: 18px;
+        background-color: #e0e0ff;
+        margin-left: 5px;
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0; }
+    }
+
+    /* Стили для секций */
+    .section {
+        padding: 80px 0;
+        background-color: transparent;
+        position: relative;
+        z-index: 1;
+    }
+
+    .dark-mode .section {
+        background-color: var(--bg-dark);
+    }
+
+    .skill-badge {
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .skill-badge:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2) !important;
+    }
+
+    /* Анимации для форм */
+    .form-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+    }
+
+    .form-animate.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Навигационное меню */
+    .navbar-nav .nav-link {
+        position: relative;
+        padding: 8px 15px;
+        transition: all 0.3s;
+    }
+
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: width 0.3s;
+    }
+
+     .binary-section-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    nav {
+        z-index: 1001;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: calc(100% - 30px);
+    }
+
+    /* Двоичный фон */
+    #binaryBackground, #binaryBackgroundHero {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0; left: 0;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    header.section {
+        position: relative;
+    }
+
+    .container, .row, .col-lg-6 {
+        position: relative;
+        z-index: 1;
+    }
+
+    .binary-code {
+        position: absolute;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.1);
+        user-select: none;
+        animation: fall linear infinite;
+        z-index: 0;
+    }
+
+    .dark-mode .binary-code {
+        color: rgba(0, 200, 255, 0.7);
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+
+    .binary-code-hero {
+        position: absolute;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.1);
+        animation: fall-hero linear infinite;
+        z-index: 0;
+    }
+
+    .dark-mode .binary-code-hero {
+        color: rgba(0, 200, 255, 0.5);
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    }
+
+    @keyframes fall-hero {
+        0% { transform: translateY(-100%); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* Неоновые эффекты для иконок */
+    .dark-mode .social-icon {
+        color: var(--neon-secondary);
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        transition: all 0.3s;
+    }
+
+    .dark-mode .social-icon:hover {
+        color: var(--neon-primary);
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.9);
+        transform: scale(1.2);
+    }
+
+      .dark-mode .fixed-console {
+        background: #0a0a1a;
+        color: #00ffff; /* Еще более яркий синий в темном режиме */
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+    }
+
+    /* Формы в секции контактов */
+    #contact .form-control {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        transition: all 0.3s;
+    }
+
+    .dark-mode #contact .form-control {
+        background-color: #2d2d2d;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+
+    #contact .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25);
+    }
+
+    .dark-mode #contact .form-control:focus {
+        border-color: var(--neon-primary);
+        box-shadow: 0 0 0 0.25rem rgba(0, 136, 255, 0.5);
+    }
+
+    #contact .btn-primary {
+        padding: 12px 30px;
+        font-weight: 600;
+    }
+
+        /* Индивидуальные фоны для секций */
+    .dark-mode header.section::before {
+        background: radial-gradient(circle at 20% 30%, rgba(30, 30, 60, 0.4) 0%, transparent 40%);
+    }
+
+    .dark-mode #about::before {
+        background: radial-gradient(circle at 80% 20%, rgba(50, 50, 80, 0.3) 0%, transparent 50%);
+    }
+
+    .dark-mode #skills::before {
+        background: linear-gradient(45deg, rgba(20, 20, 40, 0.5) 0%, transparent 100%);
+    }
+
+    .dark-mode #projects::before {
+        background: linear-gradient(-45deg, rgba(20, 20, 40, 0.5) 0%, transparent 100%);
+    }
+
+    .dark-mode #contact::before {
+        background: radial-gradient(circle at center, rgba(60, 60, 90, 0.3) 0%, transparent 60%);
+    }
