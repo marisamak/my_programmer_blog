@@ -311,22 +311,22 @@
                                     <a href="tel:+1234567890" class="social-icon"><i class="fas fa-phone"></i></a>
                                 </div>
                             </div>
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" placeholder="Ваше имя">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="email" class="form-control" placeholder="Ваш email">
-                                    </div>
+                            <form id="contactForm">  <!-- Добавлен id -->
+                              <div class="row">
+                                <div class="col-md-6 mb-3">
+                                  <input type="text" name="name" class="form-control" placeholder="Ваше имя" required>
                                 </div>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Тема">
+                                <div class="col-md-6 mb-3">
+                                  <input type="email" name="email" class="form-control" placeholder="Ваш email" required>
                                 </div>
-                                <div class="mb-3">
-                                    <textarea class="form-control" rows="5" placeholder="Ваше сообщение"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Отправить сообщение</button>
+                              </div>
+                              <div class="mb-3">
+                                <input type="text" name="subject" class="form-control" placeholder="Тема">
+                              </div>
+                              <div class="mb-3">
+                                <textarea name="message" class="form-control" rows="5" placeholder="Ваше сообщение" required></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary btn-lg w-100">Отправить сообщение</button>
                             </form>
                         </div>
                     </div>

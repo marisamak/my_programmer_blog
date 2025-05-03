@@ -102,10 +102,87 @@ function updateSectionBackgrounds() {
         }
     }
 
+
     document.addEventListener("DOMContentLoaded", function() {
         updateSectionBackgrounds();
     });
 
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(typeWriter, 100);
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(typeWriter, 100);
+    });
+
+
+function showAlert(message, type) {
+  const alert = document.createElement('div');
+  alert.className = `custom-alert alert-${type}`;
+
+  const icon = document.createElement('span');
+  icon.className = 'alert-icon';
+  icon.innerHTML = type === 'success' ? '✓' : '✕';
+
+  alert.appendChild(icon);
+  alert.appendChild(document.createTextNode(message));
+
+  document.body.appendChild(alert);
+
+  setTimeout(() => {
+    alert.style.animation = 'fadeOut 0.5s forwards';
+    alert.addEventListener('animationend', () => alert.remove());
+  }, 2500);
+
+  alert.addEventListener('click', () => {
+    alert.style.animation = 'fadeOut 0.3s forwards';
+    alert.addEventListener('animationend', () => alert.remove());
+  });
+}
+
+// Обработчик формы
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+
+  if (!form) {
+    console.error('Форма не найдена! Проверьте ID элемента.');
+    return;
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Отправка...';
+    btn.disabled = true;
+
+    try {
+      const formData = new FormData(this);
+      const message = `📩 Новое сообщение:\nИмя: ${formData.get('name')}\nEmail: ${formData.get('email')}\nТема: ${formData.get('subject')}\nСообщение: ${formData.get('message')}`;
+
+      const response = await fetch(`https://api.telegram.org/bot7033810563:AAHWtMK-HY3Ht01cHMlucZtZ5--1E15F-R8/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: '991168173',
+          text: message,
+          parse_mode: 'Markdown'
+        })
+      });
+
+      const data = await response.json();
+
+      if (!data.ok) {
+        throw new Error(data.description || 'Не удалось отправить сообщение');
+      }
+
+      showAlert('✅ Сообщение успешно отправлено!', 'success');
+      this.reset();
+
+    } catch (error) {
+      console.error('Ошибка:', error);
+      showAlert(`❌ ${error.message}`, 'error');
+    } finally {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }
+  });
 });

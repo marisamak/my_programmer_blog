@@ -525,3 +525,44 @@
     .dark-mode #contact::before {
         background: radial-gradient(circle at center, rgba(60, 60, 90, 0.3) 0%, transparent 60%);
     }
+
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10000;
+  animation: slideIn 0.3s, fadeOut 0.5s 2.5s forwards;
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  border-left: 5px solid #1B5E20;
+}
+
+.alert-error {
+  background: linear-gradient(135deg, #F44336, #C62828);
+  border-left: 5px solid #B71C1C;
+}
+
+.alert-icon {
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
