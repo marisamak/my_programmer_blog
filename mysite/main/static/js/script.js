@@ -114,27 +114,41 @@ function updateSectionBackgrounds() {
 
 
 function showAlert(message, type) {
+  // Создаём уведомление на основе Bootstrap
   const alert = document.createElement('div');
-  alert.className = `custom-alert alert-${type}`;
+  alert.className = `alert alert-${type === 'success' ? 'info' : 'danger'} alert-dismissible fade show alert-custom`;
 
-  const icon = document.createElement('span');
-  icon.className = 'alert-icon';
-  icon.innerHTML = type === 'success' ? '✓' : '✕';
+  // Иконка (используем Bootstrap Icons)
+  const icon = document.createElement('i');
+  icon.className = `bi ${type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-circle-fill'} me-2`;
 
-  alert.appendChild(icon);
-  alert.appendChild(document.createTextNode(message));
+  // Кнопка закрытия
+  const closeBtn = document.createElement('button');
+  closeBtn.type = 'button';
+  closeBtn.className = 'btn-close';
+  closeBtn.setAttribute('data-bs-dismiss', 'alert');
+
+  // Собираем структуру
+  alert.innerHTML = `
+    <div class="d-flex align-items-center">
+      ${icon.outerHTML}
+      <span>${message}</span>
+    </div>
+  `;
+  alert.appendChild(closeBtn);
 
   document.body.appendChild(alert);
 
+  // Автоматическое закрытие через 4 секунды
   setTimeout(() => {
-    alert.style.animation = 'fadeOut 0.5s forwards';
-    alert.addEventListener('animationend', () => alert.remove());
-  }, 2500);
+    const bsAlert = new bootstrap.Alert(alert);
+    bsAlert.close();
+  }, 4000);
 
-  alert.addEventListener('click', () => {
-    alert.style.animation = 'fadeOut 0.3s forwards';
-    alert.addEventListener('animationend', () => alert.remove());
-  });
+  // Плавное появление тени
+  setTimeout(() => {
+    alert.style.boxShadow = '0 4px 25px rgba(13, 110, 253, 0.4)';
+  }, 300);
 }
 
 // Обработчик формы
