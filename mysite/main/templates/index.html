@@ -134,55 +134,63 @@
     </section>
 
     <!-- Навыки -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="display-4 fw-bold text-center mb-5 animate__animated animate__fadeInUp">Мои <span class="text-primary">навыки</span></h2>
-            <div class="row justify-content-center">
-                {% for skill in profile.skills.split %}
-                    <div class="col-auto mb-3">
-                        <span class="badge bg-primary skill-badge animate__animated animate__fadeInUp" style="animation-delay: {{ forloop.counter|divisibleby:2|yesno:'0.2s,0.4s' }};">
-                            <i class="fas fa-check-circle me-2"></i>{{ skill }}
-                        </span>
-                    </div>
-                {% endfor %}
+    <!-- Навыки -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="display-4 fw-bold text-center mb-5 animate__animated animate__fadeInUp">Мои <span class="text-primary">навыки</span></h2>
+        <div class="row justify-content-center">
+            {% for skill in profile.skills.split %}
+                <div class="col-auto mb-3">
+                    <span class="badge bg-primary skill-badge animate__animated animate__fadeInUp" style="animation-delay: {{ forloop.counter|divisibleby:2|yesno:'0.2s,0.4s' }};">
+                        <i class="fas fa-check-circle me-2"></i>{{ skill }}
+                    </span>
+                </div>
+            {% endfor %}
+            <!-- GitHub встроен в общий список -->
+            <div class="col-auto mb-3">
+                <span class="badge bg-primary skill-badge animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <i class="fab fa-github me-2"></i>Git & GitHub
+                </span>
             </div>
-            <div class="row mt-5">
-                <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
-                                <i class="fas fa-code text-primary fa-3x"></i>
-                            </div>
-                            <h4>Python разработка</h4>
-                            <p class="text-muted">Создание приложений, игр, ботов и веб-решений на Python с использованием современных библиотек и фреймворков.</p>
+        </div>
+        <div class="row mt-5">
+            <!-- Остальные карточки остаются без изменений -->
+            <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                            <i class="fas fa-code text-primary fa-3x"></i>
                         </div>
+                        <h4>Python разработка</h4>
+                        <p class="text-muted">Создание приложений, игр, ботов и веб-решений на Python с использованием современных библиотек и фреймворков.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
-                                <i class="fas fa-robot text-primary fa-3x"></i>
-                            </div>
-                            <h4>AI & Боты</h4>
-                            <p class="text-muted">Разработка интеллектуальных Telegram-ботов с использованием aiogram, asyncio и интеграцией ИИ-функций.</p>
+            </div>
+            <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                            <i class="fas fa-robot text-primary fa-3x"></i>
                         </div>
+                        <h4>AI & Боты</h4>
+                        <p class="text-muted">Разработка интеллектуальных Telegram-ботов с использованием aiogram, asyncio и интеграцией ИИ-функций.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
-                                <i class="fas fa-laptop-code text-primary fa-3x"></i>
-                            </div>
-                            <h4>Веб-разработка</h4>
-                            <p class="text-muted">Создание современных адаптивных сайтов с использованием HTML5, CSS3, JavaScript и фреймворков.</p>
+            </div>
+            <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                            <i class="fas fa-laptop-code text-primary fa-3x"></i>
                         </div>
+                        <h4>Веб-разработка</h4>
+                        <p class="text-muted">Создание современных адаптивных сайтов с использованием HTML5, CSS3, JavaScript и фреймворков.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Секция проектов -->
     <section id="projects" class="section py-5">
@@ -362,5 +370,6 @@
     </div>
 
     <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>
