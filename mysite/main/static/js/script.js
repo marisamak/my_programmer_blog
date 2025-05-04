@@ -7,6 +7,7 @@ themeToggle.addEventListener('click', () => {
         themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
     generateBinaryBackground();
+    updateBackgroundImages(); // Обновляем все фоновые изображения
 });
 
     function generateBinaryBackground() {
@@ -58,6 +59,8 @@ themeToggle.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     generateBinaryBackground();
+    updateBackgroundImage(); // Добавьте этот вызов
+    typeWriter();
 });
 
 const phrases = [
@@ -200,3 +203,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Обновите функцию updateBackgroundImage
+function updateBackgroundImages() {
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    // Для hero-секции
+    const lightBg = document.querySelector('.light-bg');
+    const darkBg = document.querySelector('.dark-bg');
+
+    // Для skills-секции
+    const skillsLightBg = document.querySelector('.skills-light-bg');
+    const skillsDarkBg = document.querySelector('.skills-dark-bg');
+
+    if (isDarkMode) {
+        if (lightBg) lightBg.style.display = 'none';
+        if (darkBg) darkBg.style.display = 'block';
+        if (skillsLightBg) skillsLightBg.style.display = 'none';
+        if (skillsDarkBg) skillsDarkBg.style.display = 'block';
+    } else {
+        if (lightBg) lightBg.style.display = 'block';
+        if (darkBg) darkBg.style.display = 'none';
+        if (skillsLightBg) skillsLightBg.style.display = 'block';
+        if (skillsDarkBg) skillsDarkBg.style.display = 'none';
+    }
+}
+
