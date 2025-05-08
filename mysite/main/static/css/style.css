@@ -192,14 +192,6 @@
         /* border-radius остается 50% при наведении */
     }
 
-    /* Для адаптивности на мобильных */
-    @media (max-width: 768px) {
-        .profile-img {
-            width: 250px;
-            height: 250px;
-        }
-    }
-
     .floating {
         animation: floating 3s ease-in-out infinite;
     }
@@ -662,7 +654,6 @@ header.section {
     opacity: 0.15;
 }
 
-/* Добавьте эти стили в ваш файл style.css */
 
 #skills {
     position: relative;

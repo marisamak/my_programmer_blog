@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const phrases = [
     "> Добро пожаловать на мой сайт!",
-    "> Я начинающий специалист",
+    "> Я начинающий разработчик",
     "> Специализация: HTML, CSS, JavaScript, Python",
     "> Свяжитесь со мной!"
 ];
