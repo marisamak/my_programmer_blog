@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h&sr518b!kfo)kiha=t!d%hq-qgnx0pl%zx6spsnow3r9*zp9i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['marisamak.pythonanywhere.com']
 
 
 # Application definition
@@ -117,6 +117,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "main/static"]
+
+# Укажите полный путь к папке со статикой
+STATIC_ROOT = '/home/marisamak/mysite/static_collected'  # Для collectstatic
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
