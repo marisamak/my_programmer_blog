@@ -81,14 +81,23 @@
     </header>
 
 
-    <!-- Обо мне -->
-    <section id="about" class="section bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2 class="display-4 fw-bold mb-5 animate__animated animate__fadeInUp">Обо <span class="text-primary">мне</span></h2>
-                    <div class="animate__animated animate__fadeInUp animate__delay-1s">
-                        <p>Привет! Меня зовут Самакова Марина, мне 16 лет, и я уже 3 года активно занимаюсь программированием. За это время я освоила множество технологий и создала несколько интересных проектов.</p>
+<section id="about" class="section bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="display-4 fw-bold mb-5 animate__animated animate__fadeInUp">Обо <span class="text-primary">мне</span></h2>
+                <div class="card shadow-lg animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary p-3 rounded-circle me-3">
+                                <i class="fas fa-user text-white fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Привет! Я Марина</h4>
+                                <p class="text-muted mb-0">Fullstack разработчик (Python)</p>
+                            </div>
+                        </div>
+                        <p>Меня зовут Самакова Марина, мне 16 лет, и я уже 3 года активно занимаюсь программированием. За это время я освоила множество технологий и создала несколько интересных проектов.</p>
 
                         <p>Моя специализация - Fullstack разработка с акцентом на Python. Я создаю:</p>
                         <ul>
@@ -101,44 +110,53 @@
                         <p>Недавно я разработала интеллектуального Telegram-бота для подготовки к ЕГЭ по физике, который занял 1 место на конкурсе. В этом проекте я использовала aiogram, asyncio и JSON для хранения данных.</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card shadow-lg animate__animated animate__fadeInUp animate__delay-2s">
-                        <div class="card-body p-5">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="bg-primary p-3 rounded-circle me-3">
-                                    <i class="fas fa-graduation-cap text-white fa-2x"></i>
-                                </div>
-                                <div>
-                                    <h4 class="mb-0">Образование</h4>
-                                    <p class="text-muted mb-0">Самообразование + курсы</p>
-                                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow-lg animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary p-3 rounded-circle me-3">
+                                <i class="fas fa-graduation-cap text-white fa-2x"></i>
                             </div>
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="bg-primary p-3 rounded-circle me-3">
-                                    <i class="fas fa-briefcase text-white fa-2x"></i>
-                                </div>
-                                <div>
-                                    <h4 class="mb-0">Опыт</h4>
-                                    <p class="text-muted mb-0">3 года в программировании</p>
-                                </div>
+                            <div>
+                                <h4 class="mb-0">Образование</h4>
+                                <p class="text-muted mb-0">Самообразование + курсы</p>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary p-3 rounded-circle me-3">
-                                    <i class="fas fa-heart text-white fa-2x"></i>
-                                </div>
-                                <div>
-                                    <h4 class="mb-0">Интересы</h4>
-                                    <p class="text-muted mb-0">AI, Веб-разработка, Игровая разработка, Разработка Telegram-ботов с умной логикой</p>
-                                </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary p-3 rounded-circle me-3">
+                                <i class="fas fa-briefcase text-white fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Опыт</h4>
+                                <p class="text-muted mb-0">3 года в программировании</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary p-3 rounded-circle me-3">
+                                <i class="fas fa-heart text-white fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Интересы</h4>
+                                <p class="text-muted mb-0">AI, Веб-разработка, Игровая разработка, Разработка Telegram-ботов с умной логикой</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary p-3 rounded-circle me-3">
+                                <i class="fas fa-brain text-white fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Soft Skills</h4>
+                                <p class="text-muted mb-0">Креативность, Умение работать в команде, Тайм-менеджмент, Самообучение, Решение сложных задач</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Навыки -->
     <!-- Навыки -->
 <section id="skills" class="section">
     <img src="{% static 'images/keyboard_light.jpeg' %}" alt="Light keyboard background" class="skills-background-image skills-light-bg">
@@ -280,59 +298,56 @@
                     </div>
                 </div>
 
-                <!-- Проект 3 -->
+                <!-- Проект 3 - StarBreaker -->
                 <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                     <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
                         <div class="project-img-container position-relative overflow-hidden">
-                            <img src="{% static 'blog/images/project3.jpg' %}" class="card-img-top" alt="Проект 3">
+                            <img src="{% static 'blog/images/starbreaker.jpg' %}" class="card-img-top" alt="StarBreaker Game">
                             <div class="project-overlay">
                                 <div class="project-description p-3">
-                                    <p>Система рекомендаций фильмов на основе машинного обучения и анализа предпочтений</p>
+                                    <p>Космический арканоид с системой статистики, настройками сложности и визуальными эффектами</p>
                                     <div class="project-tech">
                                         <span class="badge bg-light text-dark me-1">Python</span>
-                                        <span class="badge bg-light text-dark me-1">TensorFlow</span>
-                                        <span class="badge bg-light text-dark">Flask</span>
+                                        <span class="badge bg-light text-dark me-1">Pygame</span>
+                                        <span class="badge bg-light text-dark">JSON</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">MovieRecommender</h5>
-                            <a href="https://github.com/yourusername/project3" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                            <h5 class="card-title">Космический удар</h5>
+                            <a href="https://github.com/marisamak/starbreaker.git" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
                                 <i class="fab fa-github me-1"></i> Исходный код
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Проект 4 -->
-                <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
-                        <div class="project-img-container position-relative overflow-hidden">
-                            <img src="{% static 'blog/images/project4.jpg' %}" class="card-img-top" alt="Проект 4">
-                            <div class="project-overlay">
-                                <div class="project-description p-3">
-                                    <p>Телеграм-бот для подготовки к ЕГЭ по физике</p>
-                                    <div class="project-tech">
-                                        <span class="badge bg-light text-dark me-1">Python</span>
-                                        <span class="badge bg-light text-dark me-1">JSON</span>
-                                        <span class="badge bg-light text-dark">HTML</span>
-                                        <span class="badge bg-light text-dark">CSS</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">SortVisualizer</h5>
-                            <a href="https://github.com/marisamak/Project_telebot.git" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                                <i class="fab fa-github me-1"></i> Исходный код
-                            </a>
-                        </div>
+<!-- Проект 4 - WB Price Tracker -->
+<div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+    <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
+        <div class="project-img-container position-relative overflow-hidden">
+            <img src="{% static 'blog/images/wb_tracker.jpg' %}" class="card-img-top" alt="WB Price Tracker">
+            <div class="project-overlay">
+                <div class="project-description p-3">
+                    <p>Бот для отслеживания цен на Wildberries с уведомлениями</p>
+                    <div class="project-tech">
+                        <span class="badge bg-light text-dark me-1">Python</span>
+                        <span class="badge bg-light text-dark me-1">Aiogram</span>
+                        <span class="badge bg-light text-dark">SQLite</span>w
+                        <span class="badge bg-light text-dark">Web Parsing</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="card-body">
+            <h5 class="card-title">Трекер цен на WB</h5>
+            <a href="https://github.com/yourusername/wb-price-tracker" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                <i class="fab fa-github me-1"></i> Исходный код
+            </a>
+        </div>
+    </div>
+</div>
 
     <!-- Контакты -->
     <section id="contact" class="section bg-white">
