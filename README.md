@@ -1,1 +1,1 @@
-# my_programmer_blog
+# https://marisamak.pythonanywhere.com/ - ссылка на сайт (версия как для пк, так и для телефона)
