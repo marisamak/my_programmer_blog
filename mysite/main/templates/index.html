@@ -99,10 +99,10 @@
                         </div>
                         <p>Меня зовут Самакова Марина, мне 16 лет, и я уже 3 года активно занимаюсь программированием. За это время я освоила множество технологий и создала несколько интересных проектов.</p>
 
-                        <p>Моя специализация - Fullstack разработка с акцентом на Python. Я создаю:</p>
+                        <p>Моя специализация — Fullstack разработка с акцентом на Python. Я создаю:</p>
                         <ul>
                             <li>Игры с использованием Tkinter и PyGame</li>
-                            <li>Веб-приложения на Django</li>
+                            <li>Веб-приложения на Django, где я реализую как серверную часть (backend), так и клиентскую часть (frontend) с интеграцией HTML, CSS и JavaScript для интерактивных интерфейсов и анимаций</li>
                             <li>Телеграм-ботов с искусственным интеллектом</li>
                             <li>Интерактивные веб-сайты с анимациями</li>
                         </ul>
@@ -236,7 +236,7 @@
                             <i class="fas fa-laptop-code text-primary fa-3x"></i>
                         </div>
                         <h4>Веб-разработка</h4>
-                        <p class="text-muted">Создание современных адаптивных сайтов с использованием HTML5, CSS3, JavaScript и фреймворков.</p>
+                        <p class="text-muted">Создание современных адаптивных сайтов с использованием HTML, CSS, JavaScript и фреймворков.</p>
                     </div>
                 </div>
             </div>
@@ -244,7 +244,6 @@
     </div>
 </section>
 
-    <!-- Секция проектов -->
     <section id="projects" class="section py-5">
         <div class="container">
             <h2 class="display-4 fw-bold text-center mb-5 animate__animated animate__fadeInUp">Мои <span class="text-primary">проекты</span></h2>
@@ -266,11 +265,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Телеграм-бот для подготовки к ЕГЭ по физике</h5>
-                            <a href="https://github.com/marisamak/Project_telebot.git" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                                <i class="fab fa-github me-1"></i> Исходный код
-                            </a>
+                            <div class="mt-auto text-center">
+                                <a href="https://github.com/marisamak/Project_telebot.git" target="_blank" class="btn btn-sm btn-outline-primary">
+                                    <i class="fab fa-github me-1"></i> Исходный код
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -278,10 +279,11 @@
                 <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                     <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
                         <div class="project-img-container position-relative overflow-hidden">
-                            <img src="{% static 'images/tanks.png' %}" class="card-img-top" alt="Проект 2">
+                            <img src="{% static 'images/tanks.jpg' %}" class="card-img-top" alt="Проект 2">
                             <div class="project-overlay">
                                 <div class="project-description p-3">
-                                    <p>Классическая игра "Танчики" с современными улучшениями. Уничтожайте вражеские танки, используйте ландшафт и различные виды снарядов.</p>                                    <div class="project-tech">
+                                    <p>Классическая игра "Танчики" с современными улучшениями. Уничтожайте вражеские танки, используйте ландшафт и различные виды снарядов.</p>
+                                    <div class="project-tech">
                                         <span class="badge bg-light text-dark me-1">Python</span>
                                         <span class="badge bg-light text-dark me-1">Tkinter</span>
                                         <span class="badge bg-light text-dark">ООП</span>
@@ -289,15 +291,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Танчики 2.0</h5>
-                            <a href="https://github.com/marisamak/game_tank.git" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                                <i class="fab fa-github me-1"></i> Исходный код
-                            </a>
+                            <div class="mt-auto text-center">
+                                <a href="https://github.com/marisamak/game_tank.git" target="_blank" class="btn btn-sm btn-outline-primary">
+                                    <i class="fab fa-github me-1"></i> Исходный код
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Проект 3 - StarBreaker -->
                 <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                     <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
@@ -314,40 +317,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Космический удар</h5>
-                            <a href="https://github.com/marisamak/starbreaker.git" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                                <i class="fab fa-github me-1"></i> Исходный код
-                            </a>
+                            <div class="mt-auto text-center">
+                                <a href="https://github.com/marisamak/starbreaker.git" target="_blank" class="btn btn-sm btn-outline-primary">
+                                    <i class="fab fa-github me-1"></i> Исходный код
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-<!-- Проект 4 - WB Price Tracker -->
-<div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-    <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
-        <div class="project-img-container position-relative overflow-hidden">
-            <img src="{% static 'images/project4.jpg' %}" class="card-img-top" alt="WB Price Tracker">
-            <div class="project-overlay">
-                <div class="project-description p-3">
-                    <p>Бот для отслеживания цен на Wildberries с уведомлениями</p>
-                    <div class="project-tech">
-                        <span class="badge bg-light text-dark me-1">Python</span>
-                        <span class="badge bg-light text-dark me-1">Aiogram</span>
-                        <span class="badge bg-light text-dark">SQLite</span>
-                        <span class="badge bg-light text-dark">Web Parsing</span>
+                <!-- Проект 4 - WB Price Tracker -->
+                <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    <div class="project-card card h-100 border-0 shadow-lg overflow-hidden">
+                        <div class="project-img-container position-relative overflow-hidden">
+                            <img src="{% static 'images/project4.jpg' %}" class="card-img-top" alt="WB Price Tracker">
+                            <div class="project-overlay">
+                                <div class="project-description p-3">
+                                    <p>Бот для отслеживания цен на Wildberries с уведомлениями</p>
+                                    <div class="project-tech">
+                                        <span class="badge bg-light text-dark me-1">Python</span>
+                                        <span class="badge bg-light text-dark me-1">Aiogram</span>
+                                        <span class="badge bg-light text-dark">SQLite</span>
+                                        <span class="badge bg-light text-dark">Web Parsing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Трекер цен на WB</h5>
+                            <div class="mt-auto text-center">
+                                <a href="https://github.com/marisamak/wb_telebot.git" target="_blank" class="btn btn-sm btn-outline-primary">
+                                    <i class="fab fa-github me-1"></i> Исходный код
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Трекер цен на WB</h5>
-            <a href="https://github.com/marisamak/wb_telebot.git" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                <i class="fab fa-github me-1"></i> Исходный код
-            </a>
-        </div>
-    </div>
-</div>
+    </section>
 
     <!-- Контакты -->
     <section id="contact" class="section bg-white">
