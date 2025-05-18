@@ -73,10 +73,10 @@ const phrases = [
 let currentPhrase = 0, currentChar = 0, isDeleting = false;
 
 function typeWriter() {
-    const el = document.getElementById('console-text');
+    const el = document.getElementById('console-text'); // Набирает текст из массива phrases по одному символу
     if (!isDeleting && currentChar < phrases[currentPhrase].length) {
         el.textContent += phrases[currentPhrase].charAt(currentChar++);
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 100); // После набора фразы пауза 1500 мс, затем удаляет текст
     } else if (isDeleting && currentChar > 0) {
         el.textContent = phrases[currentPhrase].substring(0, --currentChar);
         setTimeout(typeWriter, 50);
