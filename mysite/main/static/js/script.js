@@ -35,6 +35,7 @@ themeToggle.addEventListener('click', () => {
         });
     }
 
+    // генерирует случайные элементы с символами "0" или "1" и размещает их в указанном контейнере, создавая визуальный эффект, напоминающий "Матрицу" или падающий бинарный код
     function createBinaryElements(container, width, height, density) {
         if (!container) return;
 
@@ -59,7 +60,7 @@ themeToggle.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     generateBinaryBackground();
-    updateBackgroundImage(); // Добавьте этот вызов
+    updateBackgroundImage();
     typeWriter();
 });
 
@@ -204,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Обновите функцию updateBackgroundImage
+
 function updateBackgroundImages() {
     const isDarkMode = document.body.classList.contains('dark-mode');
 
